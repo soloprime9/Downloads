@@ -119,7 +119,7 @@ const DownloadThumbnail = () => {
   const handleDownload = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`http://localhost:4000/download-thumbnail?videoUrl=${videoUrl}`);
+      const response = await axios.get(`https://you-back-orcin.vercel.app/download-thumbnail?videoUrl=${videoUrl}`);
       setThumbnailUrls(response.data.thumbnailUrls);
     } catch (error) {
       console.error(error);
@@ -130,7 +130,7 @@ const DownloadThumbnail = () => {
 
   const handleThumbnailDownload = async (thumbnailUrl) => {
     try {
-      const response = await axios.get(`http://localhost:4000/download-thumbnail/image?thumbnailUrl=${thumbnailUrl}`, { responseType: 'blob' });
+      const response = await axios.get(`https://you-back-orcin.vercel.app/download-thumbnail/image?thumbnailUrl=${thumbnailUrl}`, { responseType: 'blob' });
       const url = window.URL.createObjectURL(new Blob([response.data]));
       const a = document.createElement('a');
       a.href = url;
