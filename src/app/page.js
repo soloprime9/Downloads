@@ -144,7 +144,7 @@ const DownloadThumbnail = () => {
 
   return (
     <div>
-      <h1>YouTube Thumbnail Downloader</h1>
+      <h1><a href="https://reduceimages-sigma.vercel.app/">YouTube Thumbnail Downloader</a></h1>
       <input type="text" value={videoUrl} onChange={(e) => setVideoUrl(e.target.value)} placeholder="Enter YouTube video URL" />
       <button onClick={handleDownload} disabled={loading}>{loading ? 'Downloading...' : 'Get Thumbnail'}</button>
       {Object.keys(thumbnailUrls).length > 0 && (
